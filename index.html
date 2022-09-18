@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--CSS STYLES-->
+  <link rel="stylesheet" href="styles.css">
+
+  <!--TAILWIND CSS-->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>Asincrónica 4</title>
+</head>
+
+<body class="h-full p-10 flex flex-col items-center justify-center gap-7 bg-green-400">
+
+  <div class="p-10 w-full bg-white border border-2 border-black rounded-xl">
+    <h1 class="font-bold text-4xl text-center">Tarea asíncrona número 4 😄</h1>
+  </div>
+
+  <!--PREGUNTA 1-->
+  <div class="p-10 w-full bg-white border border-2 border-black rounded-xl">
+    <h2 class="font-bold text-3xl text-center">PREGUNTA 1: Tarifa y Horas</h2>
+    <h3 class="mt-3 text-xl underline">Enunciado:</h3>
+    <p class="mt-1">
+      A un profesor le pagan según sus horas y una tarifa de pago por horas. Si la cantidad de horas
+      trabajadas es mayor a 40 horas, la tarifa se incrementa en un 50% para las horas extras. Calcular el salario del
+      profesor dadas las horas trabajadas y la tarifa.
+    </p>
+
+    <!--Ejercicio-->
+    <div class="mt-3 grid grid-cols-1 gap-3">
+      <!--Tarifa-->
+      <div class="px-4 py-2 border border-black rounded-lg">
+        <h4>Tarifa:</h4>
+        <input class="w-full px-2 py-1 border border-black rounded-lg" id="p1_tarifa" type="text"
+          placeholder="Ingrese su tarifa por cada hora." />
+      </div>
+
+      <!--Horas-->
+      <div class="px-4 py-2 border border-black rounded-lg">
+        <h4>Horas:</h4>
+        <input class="w-full px-2 py-1 border border-black rounded-lg" id="p1_horas" type="text"
+          placeholder="Ingrese la cantidad de horas trabajadas." />
+      </div>
+
+      <!--Botón calcular-->
+      <div class="flex items-center justify-center">
+        <button class="px-4 py-2 bg-blue-500 text-white font-bold transition duration-300 hover:scale-105 rounded-lg"
+          onclick="pregunta1()">Calcular</button>
+      </div>
+
+      <!--Resultado-->
+      <div class="p-3 bg-green-400 rounded-lg">
+        <h3 class="text-xl underline">Resultado:</h3>
+        <p class="text-xl" id="resultado1"></p>
+      </div>
+    </div>
+  </div>
+
+  <!--PREGUNTA 2-->
+  <div class="p-10 w-full bg-white border border-2 border-black rounded-xl">
+    <h2 class="font-bold text-3xl text-center">PREGUNTA 2: Perímetro de la circunferencia</h2>
+    <h3 class="mt-3 text-xl underline">Enunciado:</h3>
+    <p class="mt-1">
+      Calcular el perímetro de una circunferencia dado su radio. Luego calcule el perímetro de la misma si
+      se reduce al 50%. Luego calcule el perímetro de la misma si se reduce al 25% con respecto al resultado anterior
+    </p>
+
+    <!--Ejercicio-->
+    <div class="mt-3 grid grid-cols-1 gap-3">
+      <!--Radio-->
+      <div class="px-4 py-2 border border-black rounded-lg">
+        <h4>Radio:</h4>
+        <input class="w-full px-2 py-1 border border-black rounded-lg" id="p2_radio" type="text"
+          placeholder="Ingrese el radio de la circunferencia." />
+      </div>
+
+      <!--Botón calcular-->
+      <div class="flex items-center justify-center">
+        <button class="px-4 py-2 bg-blue-500 text-white font-bold transition duration-300 hover:scale-105 rounded-lg"
+          onclick="pregunta2()">Calcular</button>
+      </div>
+
+      <!--Resultado-->
+      <div class="p-3 bg-green-400 rounded-lg">
+        <h3 class="text-xl underline">Resultado:</h3>
+        <p class="text-xl" id="resultado2_1"></p>
+        <p class="text-xl" id="resultado2_2"></p>
+        <p class="text-xl" id="resultado2_3"></p>
+      </div>
+    </div>
+  </div>
+
+  <!--PREGUNTA 3-->
+  <div class="p-10 w-full bg-white border border-2 border-black rounded-xl">
+    <h2 class="font-bold text-3xl text-center">PREGUNTA 3: Trabajo porcentual</h2>
+    <h3 class="mt-3 text-xl underline">Enunciado:</h3>
+    <p class="mt-1">
+      Dadas las horas trabajadas de una persona y la tarifa de pago por hora, calcular su salario y
+      escribirla. Asimismo sus valores porcentuales a su salario en 10%, 30%, 60% y 80%
+    </p>
+
+    <!--Ejercicio-->
+    <div class="mt-3 grid grid-cols-1 gap-3">
+      <!--Tarifa-->
+      <div class="px-4 py-2 border border-black rounded-lg">
+        <h4>Tarifa:</h4>
+        <input class="w-full px-2 py-1 border border-black rounded-lg" id="p3_tarifa" type="text"
+          placeholder="Ingrese su tarifa por cada hora." />
+      </div>
+
+      <!--Horas-->
+      <div class="px-4 py-2 border border-black rounded-lg">
+        <h4>Horas:</h4>
+        <input class="w-full px-2 py-1 border border-black rounded-lg" id="p3_horas" type="text"
+          placeholder="Ingrese la cantidad de horas trabajadas." />
+      </div>
+
+      <!--Botón calcular-->
+      <div class="flex items-center justify-center">
+        <button class="px-4 py-2 bg-blue-500 text-white font-bold transition duration-300 hover:scale-105 rounded-lg"
+          onclick="pregunta3()">Calcular</button>
+      </div>
+
+      <!--Resultado-->
+      <div class="p-3 bg-green-400 rounded-lg">
+        <h3 class="text-xl underline">Resultado:</h3>
+        <p class="text-xl" id="resultado3_1"></p>
+        <p class="text-xl" id="resultado3_2"></p>
+        <p class="text-xl" id="resultado3_3"></p>
+        <p class="text-xl" id="resultado3_4"></p>
+        <p class="text-xl" id="resultado3_5"></p>
+      </div>
+    </div>
+  </div>
+
+  <!--PREGUNTA 4-->
+  <div class="p-10 w-full bg-white border border-2 border-black rounded-xl">
+    <h2 class="font-bold text-3xl text-center">PREGUNTA 4: Desglosar monto en billetes y monedas</h2>
+    <h3 class="mt-3 text-xl underline">Enunciado:</h3>
+    <p class="mt-1">
+      Escribir un programa que me indique un monto en billetes y soles. <br />
+      Considerar billetes de: 10 - 20 - 50 y cashs de 1 - 5
+    </p>
+
+    <!--Ejercicio-->
+    <div class="mt-3 grid grid-cols-1 gap-3">
+      <!--Monto-->
+      <div class="px-4 py-2 border border-black rounded-lg">
+        <h4>Monto:</h4>
+        <input class="w-full px-2 py-1 border border-black rounded-lg" id="p4_monto" type="text"
+          placeholder="Ingrese el monto a convertir" />
+      </div>
+
+      <!--Botón calcular-->
+      <div class="flex items-center justify-center">
+        <button class="px-4 py-2 bg-blue-500 text-white font-bold transition duration-300 hover:scale-105 rounded-lg"
+          onclick="pregunta4()">Calcular</button>
+      </div>
+
+      <!--Resultado-->
+      <div class="p-3 bg-green-400 rounded-lg">
+        <h3 class="text-xl underline">Resultado:</h3>
+        <p class="text-xl" id="resultado4_1"></p>
+        <div id="resultado4"></div>
+      </div>
+    </div>
+  </div>
+
+  <!--PREGUNTA 5-->
+  <div class="p-10 w-full bg-white border border-2 border-black rounded-xl">
+    <h2 class="font-bold text-3xl text-center">PREGUNTA 5: Notas de Algoritmos</h2>
+    <h3 class="mt-3 text-xl underline">Enunciado:</h3>
+    <p class="mt-1">
+      Un alumno desea saber cúal será su calificación final en la materia de Algorítmos. Dicha
+      calificación se compone de los
+      siguientes porcentajes: <br />
+      55% del promedio de sus tres calificaciones parciales. <br />
+      30% de la calificación del examen final. <br />
+      15% de la calificación de un trabajo final. <br />
+    </p>
+
+    <!--Ejercicio-->
+    <div class="mt-3 grid grid-cols-1 gap-3">
+      <!--Parcial 1-->
+      <div class="px-4 py-2 border border-black rounded-lg">
+        <h4>Parcial 1:</h4>
+        <input class="w-full px-2 py-1 border border-black rounded-lg" id="p5_p1" type="text"
+          placeholder="¿Cuanto sacaste en el parcial 1?" />
+      </div>
+      <!--Parcial 2-->
+      <div class="px-4 py-2 border border-black rounded-lg">
+        <h4>Parcial 2:</h4>
+        <input class="w-full px-2 py-1 border border-black rounded-lg" id="p5_p2" type="text"
+          placeholder="¿Cuanto sacaste en el parcial 2?" />
+      </div>
+      <!--Parcial 3-->
+      <div class="px-4 py-2 border border-black rounded-lg">
+        <h4>Parcial 3:</h4>
+        <input class="w-full px-2 py-1 border border-black rounded-lg" id="p5_p3" type="text"
+          placeholder="¿Cuanto sacaste en el parcial 3?" />
+      </div>
+      <!--Trabajo final-->
+      <div class="px-4 py-2 border border-black rounded-lg">
+        <h4>Trabajo final:</h4>
+        <input class="w-full px-2 py-1 border border-black rounded-lg" id="p5_trabajo" type="text"
+          placeholder="¿Cuanto sacaste en el trabajo final?" />
+      </div>
+      <!--Examen final-->
+      <div class="px-4 py-2 border border-black rounded-lg">
+        <h4>Examen final:</h4>
+        <input class="w-full px-2 py-1 border border-black rounded-lg" id="p5_examen" type="text"
+          placeholder="¿Cuanto sacaste en el examen final?" />
+      </div>
+
+      <!--Botón calcular-->
+      <div class="flex items-center justify-center">
+        <button class="px-4 py-2 bg-blue-500 text-white font-bold transition duration-300 hover:scale-105 rounded-lg"
+          onclick="pregunta5()">Calcular</button>
+      </div>
+
+      <!--Resultado-->
+      <div class="p-3 bg-green-400 rounded-lg">
+        <h3 class="text-xl underline">Resultado:</h3>
+        <p class="text-xl" id="resultado5"></p>
+      </div>
+    </div>
+  </div>
+
+  <!--PREGUNTA 6-->
+  <div class="p-10 w-full bg-white border border-2 border-black rounded-xl">
+    <h2 class="font-bold text-3xl text-center">PREGUNTA 6: Presupuestos áreas de salud</h2>
+    <h3 class="mt-3 text-xl underline">Enunciado:</h3>
+    <p class="mt-1">
+      En un hospital existen tres áreas: Ginecología, Pediatría, Traumatología. El presupuesto anual del
+      hospital se reparte conforme a la siguiente tabla: <br />
+      Área: % del presupuesto <br />
+      Ginecología: 40% <br />
+      Traumatología: 30% <br />
+      Pediatría: 30% <br />
+      Obtener la cantidad de dinero que recibirá cada área, para cualquier monto presupuestal
+    </p>
+
+    <!--Ejercicio-->
+    <div class="mt-3 grid grid-cols-1 gap-3">
+      <!--Presupuesto-->
+      <div class="px-4 py-2 border border-black rounded-lg">
+        <h4>Presupuesto:</h4>
+        <input class="w-full px-2 py-1 border border-black rounded-lg" id="p6_presupuesto" type="text"
+          placeholder="Ingrese el monto del presupuesto del área de salud" />
+      </div>
+
+      <!--Botón calcular-->
+      <div class="flex items-center justify-center">
+        <button class="px-4 py-2 bg-blue-500 text-white font-bold transition duration-300 hover:scale-105 rounded-lg"
+          onclick="pregunta6()">Calcular</button>
+      </div>
+
+      <!--Resultado-->
+      <div class="p-3 bg-green-400 rounded-lg">
+        <h3 class="text-xl underline">Resultado:</h3>
+        <p class="text-xl" id="resultado6_1"></p>
+        <p class="text-xl" id="resultado6_2"></p>
+        <p class="text-xl" id="resultado6_3"></p>
+      </div>
+    </div>
+  </div>
+
+  <!--PREGUNTA 7-->
+  <div class="p-10 w-full bg-white border border-2 border-black rounded-xl">
+    <h2 class="font-bold text-3xl text-center">PREGUNTA 7: Conversión de m/s a km/h</h2>
+    <h3 class="mt-3 text-xl underline">Enunciado:</h3>
+    <p class="mt-1">
+      Escribir un programa al cual ingrese la velocidad de un móvil expresada en metros por segundo e
+      imprima en la pantalla la velocidad en kilómetros por hora
+    </p>
+
+    <!--Ejercicio-->
+    <div class="mt-3 grid grid-cols-1 gap-3">
+      <!--Presupuesto-->
+      <div class="px-4 py-2 border border-black rounded-lg">
+        <h4>Metros por segundo:</h4>
+        <input class="w-full px-2 py-1 border border-black rounded-lg" id="p7_velocidad" type="text"
+          placeholder="Ingrese la velocidad en metros por segundo" />
+      </div>
+
+      <!--Botón calcular-->
+      <div class="flex items-center justify-center">
+        <button class="px-4 py-2 bg-blue-500 text-white font-bold transition duration-300 hover:scale-105 rounded-lg"
+          onclick="pregunta7()">Calcular</button>
+      </div>
+
+      <!--Resultado-->
+      <div class="p-3 bg-green-400 rounded-lg">
+        <h3 class="text-xl underline">Resultado:</h3>
+        <p class="text-xl" id="resultado7"></p>
+      </div>
+    </div>
+  </div>
+
+  <!--PREGUNTA 8-->
+  <div class="p-10 w-full bg-white border border-2 border-black rounded-xl">
+    <h2 class="font-bold text-3xl text-center">PREGUNTA 8: Array de enteros</h2>
+    <h3 class="mt-3 text-xl underline">Enunciado:</h3>
+    <p class="mt-1">
+      Dado un array de enteros, comprobar el mayor, el menor y por último la media de todos
+    </p>
+
+    <!--Ejercicio-->
+    <div class="mt-3 grid grid-cols-1 gap-3">
+      <!--Calculo del array-->
+      <div class="px-4 py-2 border border-black rounded-lg">
+        <h4>Array (N° de elementos):</h4>
+        <p>Escríbalo de la siguiente forma: (Ejem: 12,13,45,1,23)</p>
+        <input class="w-full px-2 py-1 border border-black rounded-lg" id="p8_elementos" type="text"
+          placeholder="Agregue los elementos del array" />
+      </div>
+
+      <!--Botón calcular-->
+      <div class="flex items-center justify-center">
+        <button class="px-4 py-2 bg-blue-500 text-white font-bold transition duration-300 hover:scale-105 rounded-lg"
+          onclick="pregunta8()">Calcular</button>
+      </div>
+
+      <!--Resultado-->
+      <div class="p-3 bg-green-400 rounded-lg">
+        <h3 class="text-xl underline">Resultado:</h3>
+        <p class="text-xl" id="resultado8_1"></p>
+        <p class="text-xl" id="resultado8_2"></p>
+        <p class="text-xl" id="resultado8_3"></p>
+        <p class="text-xl" id="resultado8_4"></p>
+      </div>
+    </div>
+  </div>
+
+  <!--PREGUNTA 9-->
+  <div class="p-10 w-full bg-white border border-2 border-black rounded-xl">
+    <h2 class="font-bold text-3xl text-center">PREGUNTA 9: Ordenando array</h2>
+    <h3 class="mt-3 text-xl underline">Enunciado:</h3>
+    <p class="mt-1">
+      Ingresar n valores enteros, y luego ordenarlos
+    </p>
+
+    <!--Ejercicio-->
+    <div class="mt-3 grid grid-cols-1 gap-3">
+      <!--Ordenamiento del array-->
+      <div class="px-4 py-2 border border-black rounded-lg">
+        <h4>Array (N° de elementos):</h4>
+        <p>Escríbalo de la siguiente forma: (Ejem: 12,13,45,1,23)</p>
+        <input class="w-full px-2 py-1 border border-black rounded-lg" id="p9_elementos" type="text"
+          placeholder="Agregue los elementos del array" />
+      </div>
+
+      <!--Botón calcular-->
+      <div class="flex items-center justify-center">
+        <button class="px-4 py-2 bg-blue-500 text-white font-bold transition duration-300 hover:scale-105 rounded-lg"
+          onclick="pregunta9()">Calcular</button>
+      </div>
+
+      <!--Resultado-->
+      <div class="p-3 bg-green-400 rounded-lg">
+        <h3 class="text-xl underline">Resultado:</h3>
+        <p class="text-xl" id="resultado9_1"></p>
+        <p class="text-xl" id="resultado9_2"></p>
+      </div>
+    </div>
+  </div>
+
+  <!--PREGUNTA 10-->
+  <div class="p-10 w-full bg-white border border-2 border-black rounded-xl">
+    <h2 class="font-bold text-3xl text-center">PREGUNTA 10: Fibonacci</h2>
+    <h3 class="mt-3 text-xl underline">Enunciado:</h3>
+    <p class="mt-1">
+      Realizar la serie de fibonacci
+    </p>
+
+    <!--Ejercicio-->
+    <div class="mt-3 grid grid-cols-1 gap-3">
+      <!--Cantidad-->
+      <div class="px-4 py-2 border border-black rounded-lg">
+        <h4>Cantidad de numeros de fibonacci:</h4>
+        <input class="w-full px-2 py-1 border border-black rounded-lg" id="p10_fibonacci" type="text"
+          placeholder="¿Cuantos números desea que tenga la serie?" />
+      </div>
+
+      <!--Botón calcular-->
+      <div class="flex items-center justify-center">
+        <button class="px-4 py-2 bg-blue-500 text-white font-bold transition duration-300 hover:scale-105 rounded-lg"
+          onclick="pregunta10()">Calcular</button>
+      </div>
+
+      <!--Resultado-->
+      <div class="p-3 bg-green-400 rounded-lg">
+        <h3 class="text-xl underline">Resultado:</h3>
+        <p class="text-xl" id="resultado10"></p>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
